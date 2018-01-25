@@ -1,0 +1,33 @@
+spark.master                     	spark://alemi-1:7077
+conf spark.rpc.netty.dispatcher.numThreads	3
+spark.driver.memory              	7g
+spark.memory.storageFraction		0.5
+spark.memory.offHeap.enabled		true
+spark.memory.offHeap.size		10g
+spark.dynamicAllocation.enabled         true
+#spark.dynamicAllocation.minExecutors	1
+#spark.dynamicAllocation.maxExecutors    20
+spark.shuffle.service.enabled   	true
+#spark.shuffle.blockTransferService	nio
+spark.driver.maxResultSize	 	5g
+#spark.default.parallelism		100
+spark.eventLog.enabled           	true
+spark.eventLog.dir               	hdfs://alemi-1/spark-history
+spark.local.dir                 	/mnt/sde/spark-data,/mnt/sdf/spark-data
+spark.serializer                	org.apache.spark.serializer.KryoSerializer
+spark.kryo.registrationRequired		true
+spark.kryoserializer.buffer.max		128m
+spark.kryoserializer.buffer     	128k
+#spark.akka.frameSize            	258
+spark.shuffle.compress          	true
+spark.shuffle.file.buffer       	128k
+spark.shuffle.io.preferDirectBufs	true
+spark.reducer.maxSizeInFlight		32m
+spark.shuffle.io.numConnectionsPerPeer  6
+spark.io.compression.codec              lz4
+spark.rdd.compress              	false
+spark.io.compression.lz4.blockSize	32k
+spark.executor.extraJavaOptions 	-XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=35 -XX:MaxGCPauseMillis=100 -XX:-ResizePLAB -XX:+PrintFlagsFinal -XX:+PrintReferenceGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintAdaptiveSizePolicy -XX:+UnlockDiagnosticVMOptions -XX:+G1SummarizeConcMark -Xmn45g
+#spark.history.fs.logDirectory		hdfs://alemi-1/history/
+spark.worker.cleanup.enabled		true
+
